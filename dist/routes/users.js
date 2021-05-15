@@ -84,6 +84,11 @@ userRouters.post('/update', autentication_1.verificaToken, (req, res) => {
             nombre: userDB.nombre,
             avatar: userDB.avatar
         });
+    }).catch(err => {
+        res.json({
+            ok: false,
+            err
+        });
     });
 });
 exports.default = userRouters;

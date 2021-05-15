@@ -84,6 +84,11 @@ userRouters.post('/update', verificaToken, (req: any, res: Response)=>{
             nombre: userDB.nombre,
             avatar: userDB.avatar
         });
+    }).catch(err => {
+        res.json({
+            ok: false,
+            err
+        });
     });
 });
 
